@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit Todo{% endblock %}
+
+{% block content %}
+<h1>Edit Todo Item</h1>
+<p>Edit a Todo item.</p>
+<form action="/todo/update" method="post">
+    <p><input type="hidden" value="{{ todo.id }}" name="id"></p>
+    <p><input type="text" value="{{ todo.name }}"  name="name"></p>
+    <p><input type="text" value="{{ todo.description }}"  name="description"></p>
+    <p><input type="submit" value="Update"></p>
+</form>
+{% endblock %}

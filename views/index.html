@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}Todo Tasks{% endblock %}
+
+{% block content %}
+  <h1>Todo List</h1>
+  <p>You have <strong>{{ todos.length }}</strong> Todo Items!</p>
+  <p><a href="/todo/new">Create a ToDo</a></p>
+  <ul id="todos">
+    {% for todo in todos %}
+      <li>
+          <strong>{{ todo.name }}</strong> ||
+          <a href="/todo/{{ todo.id }}">View Details</a> ||
+          <a href="/todo/edit/{{ todo.id }}">Edit</a> ||
+          <a href="/todo/delete/{{ todo.id }}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
