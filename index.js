@@ -32,7 +32,6 @@ var render= views(__dirname + '/views', { map: { html: 'swig' }});
  * Todo item List.
  */
 function *list() {
-    console.log(todos.length)
   this.body = yield render('index', { todos: todos });
 }
 
